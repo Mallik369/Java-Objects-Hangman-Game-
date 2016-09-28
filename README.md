@@ -29,7 +29,7 @@ The Following User Stories are considered to Develop Hangman Game
 
 Hangman need to Receive Input from User
 
-                                Method  : public boolean guessForPrompter( )
+                                Method  : public void guessForPrompter( )
 
 **2.  As a guesser, I should be presented with my current progress, so that I can make an educated guess**.
 
@@ -77,7 +77,7 @@ Hangman needs Check for Empty String Input from User
                       
                           Method
 
-                          public boolean applyGuess(String letters)
+                          public void applyGuess(String letters)
 
 
 
