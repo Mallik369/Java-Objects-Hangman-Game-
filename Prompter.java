@@ -7,71 +7,50 @@ public class Prompter
     private Game mGame;
     private BufferedReader mreader;
 
-    public Prompter(Game game)
-    {
+    public Prompter(Game game) {
         mGame = game;
         mreader = new BufferedReader(new InputStreamReader(System.in));
     }
-
     /*
     Application Runnable Method
     Game Runs till user has tries left and Game is not solved
-
     */
+    public void play ( ) {
 
-    public void play ( )
-    {
-        while( mGame.remainingTries() > 0 && !mGame.isSolved())
-        {
+        while( mGame.remainingTries() > 0 && !mGame.isSolved()) {
             displayProgress();
             guessForPrompter();
          }
-         if(mGame.isSolved())
-         {  
+         if(mGame.isSolved()) {
             System.out.printf("Congratulation you have completed %s word with %d tries remaining\n",
                     mGame.getAnswer(), mGame.remainingTries());
-         }
-         else
-         {
+         } else {
            System.out.printf("%s is the word, Please Try Again, All the Best\n",mGame.getAnswer());
          }
     } 
-
     /*
     Input : Receives Input from User
     Pass the Input to apply Guess Method
     */
+    public void guessForPrompter( ) {
 
-    public boolean guessForPrompter( ) {
-
-
-        boolean isHit   = false;
         boolean isValid = false;
-        while(!isValid)
-        {
+        while(!isValid) {
             System.out.println("Enter the Guess: ");
-
-            try
-            {
+            try {
                 String guessAsString = mreader.readLine();
-                isHit = mGame.applyGuess(guessAsString);
+                mGame.applyGuess(guessAsString);
                 isValid = true;
-            }
-            catch(IllegalArgumentException iae)
-            {
+            } catch(IllegalArgumentException iae) {
                 System.out.printf("%s ,Please try Again\n ",iae.getMessage());
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
         }
-       return isHit;
-    } 
-
+    }
     //Output : Display the Remaining Tries left to User and Current Progress of Game
 
-    public void displayProgress()
-    {
+    public void displayProgress() {
         System.out.printf("Try to Solve: %d Tries are remaining %s\n", mGame.remainingTries(),mGame.currentProgress());
     }
 }
