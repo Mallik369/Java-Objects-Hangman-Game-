@@ -1,5 +1,6 @@
 public class Game
 {
+    // @MAX_TREIS : Maximum tries avialabel to User to Guess 
     public static final int MAX_TRIES = 7;
     private String mAnswer;
     private String mHits;
@@ -110,6 +111,7 @@ public class Game
     Helper Methods :
      Checks for the Progress of the Application
     to further proceed or to Abort the Application
+    @MAX_TREIS : Maximum tries avialabel to User to Guess 
     @remainingTries : Holds user remaining tries available to Guess
     Compute Method : Final Output
     @remainingTries : Holds user Guessed Letter with no of tries remaining
