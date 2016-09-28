@@ -1,23 +1,22 @@
 public class Game
 {
-    // @MAX_TREIS : Maximum tries avialabel to User to Guess 
-    public static final int MAX_TRIES = 7;
+    public static final int MAX_TRIES = 7; // Meximum Tries Available to Guess
     private String mAnswer;
     private String mHits;
     private String mMisses;
   
-    public Game(String answer) 
-    {
+    public Game(String answer) {
       
         mAnswer = answer;
         mHits   = "";
         mMisses = "";
-
     }
+
     public String getAnswer( )
     {
         return mAnswer;
     }
+
     /*
       Validate Method : Input
       Validate Input is a letter , digit or Special Character
@@ -25,17 +24,14 @@ public class Game
       Validate Process Input is already is guessed from user
       pass the Process Input to Compute Method: applyGuess(char letter)
      */
-    private char validateGuess(char letter)
-    {
+
+    private char validateGuess(char letter) {
         //Validate the user Input Character
-        if(!Character.isLetter(letter))
-        {
-            throw new IllegalArgumentException(letter+ "is not a letter"); 
+        if(!Character.isLetter(letter)) {
+            throw new IllegalArgumentException(letter+ "is not a letter");
         }
         letter =Character.toLowerCase(letter);
-        
-        if ( mHits.indexOf(letter) >= 0 || mMisses.indexOf(letter) >= 0)
-        {
+        if ( mHits.indexOf(letter) >= 0 || mMisses.indexOf(letter) >= 0) {
             throw new IllegalArgumentException(letter + "is guessed letter");
         }
         return letter;
@@ -49,17 +45,14 @@ public class Game
     Compute Method : applyGuess(char letter)
      */
 
-    public boolean applyGuess(String letters)
-    {
+
+    public void applyGuess(String letters) {
         //Checks for Empty String
-        if(letters.length( ) == 0)
-        {
+        if(letters.length( ) == 0) {
             throw new IllegalArgumentException("It is an Empty Guess");
         }
         applyGuess(letters.charAt(0));
-        return true;
     }
-
     /*
       Compute Method: Intermediate Output
       Input : letter
@@ -69,38 +62,23 @@ public class Game
       Intermediate Output : mHits or mMisses
 
     */
-    public boolean applyGuess(char letter) 
-    {
+    public void applyGuess(char letter) {
          letter = validateGuess(letter);
-        
-        if ( mAnswer.indexOf(letter) >= 0) 
-        {
+         if ( mAnswer.indexOf(letter) >= 0) {
             mHits +=letter;
-            return true;
-        }
-        else
-        {
-            
-          mMisses += letter;
-          return false;
-        }
-   }
-
-   /*
+         } else {
+             mMisses += letter;
+         }
+    }
+    /*
    Compute Method : Intermediate Output
    @ progress : Holds current status of User Guess
    */
-
-   public String currentProgress( )
-   {
-      
-        String progress = "";
-        for (char letter : mAnswer.toCharArray())
-        {
+    public String currentProgress( ) {
+       String progress = "";
+       for (char letter : mAnswer.toCharArray()) {
             char display = '-';
-            if(mHits.indexOf(letter) >= 0)
-            {
-          
+            if(mHits.indexOf(letter) >= 0) {
                 display = letter;
             }
             progress += display;
@@ -111,14 +89,12 @@ public class Game
     Helper Methods :
      Checks for the Progress of the Application
     to further proceed or to Abort the Application
-    @MAX_TREIS : Maximum tries avialabel to User to Guess 
     @remainingTries : Holds user remaining tries available to Guess
     Compute Method : Final Output
     @remainingTries : Holds user Guessed Letter with no of tries remaining
    */
 
-   public int remainingTries( )
-   {
+   public int remainingTries( ) {
         int remainingTries = (MAX_TRIES - mMisses.length());
         return remainingTries;
    }
@@ -131,5 +107,6 @@ public class Game
    {
       return currentProgress().indexOf('-') == -1;
    }
+
 }
     
