@@ -2,8 +2,10 @@
 
 ## Hangman Game
                                                     
-Hangman Game is Console based Java Application developed to play a Hangman Game between User and Computer. 
+Hangman Game is Console based Application developed to play a Hangman Game between User and Computer. 
 This Project is done as a process to develop Java Console Based Application and Learn, Apply and Acquire Java Object Skill Sets. 
+
+Hangman Computer Application is Developed based on Idea of Traditional [Hangman Game ](https://en.wikipedia.org/wiki/Hangman_(game))
 
 
 The Following User Stories are considered to Develop Hangman Game
