@@ -1,11 +1,8 @@
-public class Hangman 
-{
+public class Hangman {
     // @ args : Receives Input from User
-    public static void main(String[] args) 
-    {
+    public static void main(String[] args) {
         // Enter amazing code here
-        if ( args.length == 0 )
-        {
+        if ( args.length == 0 ) {
           System.out.println("Enter the word to play game");
           System.exit(0);
         }
