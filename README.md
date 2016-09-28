@@ -3,7 +3,22 @@
 ## Hangman Game
                                                     
 Hangman Game is Console based Application developed to play a Hangman Game between User and Computer. 
-This Project is done as a process to develop Java Console Based Application and Learn, Apply and Acquire Java Object Skill Sets. 
+This Project is done as a process to develop Java Console Based Application and Learn, Apply and Acquire Java Object Skill Sets.
+
+To Run the Hangman Application
+
+Command Line
+                      
+                      javac Hangman.java
+                      
+                      java Hangman amazing
+                      
+   amazing is the word to be guessed by user , it is passed as the argument to Application.  
+
+IDE
+
+         The Argument Passed to Application can be set in "Edit Configuration" Panel
+
 
 Hangman Computer Application is Developed based on Idea of Traditional [Hangman Game ](https://en.wikipedia.org/wiki/Hangman_(game))
 
