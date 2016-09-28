@@ -54,9 +54,9 @@ Hangman needs to display Final Condition of Game
 
                              public boolean isSolved( )    // Computes progress of Hangman Game 
 
-**6.Error Checking
+6.Error Checking
 
-  Bug: if the empty String is given**
+  Bug: if the empty String is given
 
 Hangman needs Check for Empty String Input from User
                       
